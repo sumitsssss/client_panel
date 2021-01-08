@@ -17,6 +17,9 @@ const Navbar = () => {
             textDecoration: 'none',
             color: '#fff',
             marginLeft: 45
+        },
+        color:{
+            color: '#f4f4f4',
         }
     }));
     const classes = useStyles();
@@ -24,7 +27,7 @@ const Navbar = () => {
     <AppBar position="static" color="primary">
       <Toolbar>
         <IconButton>
-          <MenuIcon color="secondary"/>
+          <MenuIcon className={classes.color}/>
         </IconButton>
 
         <Link to="/" className={classes.links}>
