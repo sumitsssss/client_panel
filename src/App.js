@@ -1,14 +1,20 @@
-import './App.css';
-import Navbar from './components/navbar';
-import { BrowserRouter as Router, Switch, Route  } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/layout/navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Dashboard from "./components/layout/Dashboard";
+import Container from "@material-ui/core/Container";
 
 function App() {
   return (
-
     <div className="App">
       <Router>
+        <Navbar />
 
-      <Navbar/>
+        <Container fixed>
+          <Switch>
+            <Route exact path="/" component={Dashboard} />
+          </Switch>
+        </Container>
       </Router>
     </div>
   );
