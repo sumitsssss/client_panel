@@ -1,14 +1,21 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import SideBar from "./Sidebar";
 import Clients from "../client/Clients";
-import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import GlobalStyles from "../../Globals.styles";
 
 const Dashboard = () => {
+  const classes = GlobalStyles();
+  
   return (
-    <Container fixed>
-      <Typography variant="h4">DashBoard</Typography>
-    </Container>
+    <Grid container>
+      <Grid item xs={10}>
+          <Clients />
+      </Grid>
+      <Grid item xs={2}>
+        <SideBar />
+      </Grid>
+    </Grid>
   );
 };
 
