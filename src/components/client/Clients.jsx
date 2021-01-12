@@ -1,6 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Grid, makeStyles, withStyles, Button } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
-import { firestore } from "../../firebase";
+import React, { useEffect } from "react";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -18,27 +18,12 @@ import { connect } from "react-redux";
 import { fetchClients } from "../../Redux/actions/clientActions";
 
 
-const Clients = ({ clients, fetch_clients }) => {
+const Clients = ({ clients, fetchClients }) => {
   const globalClass = GlobalStyles();
   useEffect(()=>{
-    fetchClients();
+    fetchClients()
   },[])
 
-  // const [clients, setClients] = useState([]);
-  // useEffect(() => {
-  //   const getClients = async () => {
-  //     const snapShot = await firestore.collection("clients").get();
-  //     const clients = snapShot.docs.map((doc) => ({
-  //       id: doc.id,
-  //       ...doc.data(),
-  //     }));
-  //     setClients(clients);
-  //   };
-
-  //   getClients();
-  // }, []);
-
-  // console.log(state.clients);
   const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: theme.palette.common.black,
